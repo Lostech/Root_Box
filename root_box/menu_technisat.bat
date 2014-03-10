@@ -9,7 +9,8 @@ echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo ::                                                                           ::
 echo :: Waehlen Sie ein TechniSat Geraet aus:                                     ::
 echo :: (1) Root Automatik (fuer unbekannte Geraete)                              ::
-echo :: (2) TechniPad 10G Root                                                    ::
+echo :: (2) TechniPad 8 Root                                                      ::
+echo :: (3) TechniPad 10 Root                                                     ::
 echo :: (m) Hauptmenue                                                            ::
 echo ::                                                                           ::
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -20,7 +21,8 @@ if '%device%'=='' (
 goto :menu_technisat
 )
 IF %device%==1 (goto menu_auto)
-IF %device%==2 (goto menu_tpad10g)
+IF %device%==2 (goto menu_tpad8)
+IF %device%==3 (goto menu_tpad10)
 IF %device%==m (goto menu)
 goto :menu_technisat
 
@@ -46,7 +48,38 @@ IF %rootmethod%==1 (goto auto_root_rk30)
 IF %rootmethod%==m (goto menu)
 goto :menu_auto
 
-:menu_tpad10g
+:menu_tpad8
+cls
+echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo ::                                                                           ::
+echo :: Rufen Sie in den Tablet Einstellungen die Systeminfo "Ueber das Tablet"   ::
+echo :: auf und lesen Sie die Versionsangaben ab:                                 ::
+echo ::                                                                           ::
+echo :: Variante 1:                                                               ::
+echo :: -----------                                                               ::
+echo :: Android Version: 4.2.2                                                    ::
+echo :: Build Version:   GE.TPad.S8_W.V1.01                                       ::
+echo ::                                                                           ::
+echo :: Waehlen Sie nun die entsprechende Root Methode oder brechen Sie ab:       ::
+echo :: (1) Root Methode fuer Variante 1 starten                                  ::
+echo :: (2) Root Methode unbekannt / Automatik versuchen                          ::
+echo :: (z) TechniSat Geraetemenue                                                ::
+echo :: (m) Hauptmenue                                                            ::
+echo ::                                                                           ::
+echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo.
+SET rootmethod=
+SET /P rootmethod= Auswahl: 
+if '%rootmethod%'=='' (
+goto :menu_tpad8
+)
+IF %rootmethod%==1 (goto tpad8_root1)
+IF %rootmethod%==2 (goto auto_root_rk30)
+IF %rootmethod%==z (goto menu_technisat)
+IF %rootmethod%==m (goto menu)
+goto :menu_tpad8
+
+:menu_tpad10
 cls
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo ::                                                                           ::
@@ -75,24 +108,28 @@ echo.
 SET rootmethod=
 SET /P rootmethod= Auswahl: 
 if '%rootmethod%'=='' (
-goto :menu_tpad10g
+goto :menu_tpad10
 )
-IF %rootmethod%==1 (goto tpad10g_root1)
-IF %rootmethod%==2 (goto tpad10g_root2)
+IF %rootmethod%==1 (goto tpad10_root1)
+IF %rootmethod%==2 (goto tpad10_root2)
 IF %rootmethod%==3 (goto auto_root_rk30)
 IF %rootmethod%==z (goto menu_technisat)
 IF %rootmethod%==m (goto menu)
-goto :menu_tpad10g
+goto :menu_tpad10
 
 :menu
 call "%~dp0menu.bat"
 goto :exit
 
-:tpad10g_root1
+:tpad8_root1
+call "%~dp0/devices/root_GE.TPad.S8_W.V1.01.bat"
+goto :exit
+
+:tpad10_root1
 call "%~dp0/devices/root_GE.Technisat.S10_g.V107.bat"
 goto :exit
 
-:tpad10g_root2
+:tpad10_root2
 call "%~dp0/devices/root_GE.TPad.S10_W.V1.03.bat"
 goto :exit
 
