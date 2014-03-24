@@ -1,5 +1,5 @@
 @echo off
-if not exist "%~dp0info" md "%~dp0info"
+if not exist "%~dp0..\info" md "%~dp0..\info"
 :menu_tools
 cd "%~dp0"
 color 1F
