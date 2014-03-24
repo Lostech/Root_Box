@@ -12,6 +12,8 @@ be also compatible for the same root procedure is also included within the Root 
 For the sourcecode of AndroidInfo have a look to my other repository:
 https://github.com/Lostech/AndroidInfo
 
+Lostech Root Box offers also tools like ADB shell or APK backup.
+
 If you successfully rooted a device which is not officially supported by my Root Box
 then please send my the information text file from your device which you can create with
 AndroidInfo found in the Tools section of the Root Box. Thanks in advance.

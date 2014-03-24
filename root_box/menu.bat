@@ -1,6 +1,7 @@
 @echo off
 :menu
 if not exist "%~dp0info" md "%~dp0info"
+if not exist "%~dp0apk_backup" md "%~dp0apk_backup"
 cd "%~dp0"
 color 1F
 cls
