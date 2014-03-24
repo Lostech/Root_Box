@@ -14,6 +14,7 @@ echo :: (2) AndroidInfo fuer regulaere Android Geraete starten (ADB Root)       
 echo :: (3) AndroidInfo fuer Rockchip RK30 basierte Geraete starten               ::
 echo :: (4) AndroidInfo fuer Rockchip RK30 basierte Geraete starten (ADB Root)    ::
 echo :: (5) AndroidInfo Datei Ordner oeffnen                                      ::
+echo :: (6) ADB Shell oeffnen                                                     ::
 echo :: (m) Hauptmenue                                                            ::
 echo ::                                                                           ::
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -28,6 +29,7 @@ IF %tool%==2 (goto tools_2)
 IF %tool%==3 (goto tools_3)
 IF %tool%==4 (goto tools_4)
 IF %tool%==5 (goto tools_folder)
+IF %tool%==6 (goto tools_6)
 IF %tool%==m (goto menu)
 goto :menu_tools
 
@@ -53,6 +55,11 @@ goto :menu_tools
 
 :tools_folder
 start "" "%~dp0info"
+goto :menu_tools
+
+:tools_6
+cd "%~dp0tools/
+call "ADB_Shell.bat"
 goto :menu_tools
 
 :menu
