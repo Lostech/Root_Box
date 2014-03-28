@@ -1,5 +1,6 @@
 #manually added
 root_box/info/*.txt
+root_box/backup/*
 
 #################
 ## Eclipse
