@@ -13,6 +13,7 @@ echo ::                                                                         
 echo :: Waehlen Sie eine Option aus:                                              ::
 echo :: (1) Root Automatik (fuer unbekannte Geraete)                              ::
 echo :: (2) TechniSat Geraete                                                     ::
+echo :: (3) TowelRoot Methode                                                     ::
 echo :: (t) Tools                                                                 ::
 echo :: (u) Un-Root                                                               ::
 echo :: (x) beenden                                                               ::
@@ -26,6 +27,7 @@ goto :menu
 )
 IF %choice%==1 (goto menu_auto)
 IF %choice%==2 (goto menu_technisat)
+IF %choice%==3 (goto menu_towelroot)
 IF %choice%==t (goto menu_tools)
 IF %choice%==u (goto menu_unroot)
 IF %choice%==x (goto exit)
@@ -37,6 +39,10 @@ goto :exit
 
 :menu_technisat
 call "%~dp0menu_technisat.bat"
+goto :exit
+
+:menu_towelroot
+call "%~dp0menu_towelroot.bat"
 goto :exit
 
 :menu_auto
