@@ -6,13 +6,13 @@ set /p supersu=<../apk/supersu
 set /p busybox=<../apk/busybox
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo ::                                                                           ::
-echo ::                Lostech TechniPad 10 Root V1.0                             ::
+echo ::                Lostech TechniPad 10G Root V1.0                            ::
 echo ::                                                                           ::
 echo ::  Dieses Skript installiert Root Zugriff, SuperUser Verwaltung             ::
-echo ::  und eine aktuelle BusyBox auf einem TechniPad 10 mit                     ::
+echo ::  und eine aktuelle BusyBox auf einem TechniPad 10G mit                    ::
 echo ::                                                                           ::
 echo ::  Android Version: 4.2.2                                                   ::
-echo ::  Build Version:   GE.TPad.S10_W.V1.03                                     ::
+echo ::  Build Version:   GE.TPad.S10_G.V1.05                                     ::
 echo ::                                                                           ::
 echo ::  Wenn Sie das nicht wollen, koennen Sie jederzeit das Skript mit STRG+C   ::
 echo ::  abbrechen oder schliessen Sie einfach das Fenster!                       ::
@@ -32,7 +32,7 @@ echo :: auf und kontrollieren Sie, ob die Versionsangaben dort mit folgenden    
 echo :: Versionsangaben uebereinstimmen:                                          ::
 echo ::                                                                           ::
 echo :: Android Version: 4.2.2                                                    ::
-echo :: Build Version:   GE.TPad.S10_W.V1.03                                      ::
+echo :: Build Version:   GE.TPad.S10_G.V1.05                                      ::
 echo ::                                                                           ::
 echo :: Stimmen die Versionen nicht ueberein, wird der Root Vorgang               ::
 echo :: hoechstwahrscheinlich fehlschlagen. Es wird empfohlen STRG+C oder durch   ::
