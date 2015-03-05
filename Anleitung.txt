@@ -3,4 +3,13 @@
 :: Starten Sie die "Start.bat" Datei und folgen Sie den dort  ::
 :: beschriebenen Anweisungen.                                 ::
 ::                                                            ::
+:: Es wird empfohlen, die Lostech Root Box mit Administrator- ::
+:: rechten auszuführen!                                       ::
+::                                                            ::
+:: Sollten weiterhin Probleme bei der Treiberinstallation     ::
+:: auftreten, muessen die Treiber manuell installiert werden. ::
+:: Das Treiber Setup waehrend des Root Vorgangs kann dann     ::
+:: einfach geschlossen werden. Es wird dann automatisch mit   ::
+:: dem naechsten Punkt im Root Vorgang fortgefahren.          ::
+::                                                            ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

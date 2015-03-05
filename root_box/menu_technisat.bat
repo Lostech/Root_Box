@@ -11,6 +11,7 @@ echo :: Waehlen Sie ein TechniSat Geraet aus:                                   
 echo :: (1) Root Automatik (fuer unbekannte Geraete)                              ::
 echo :: (2) TechniPad 8 Root                                                      ::
 echo :: (3) TechniPad 10(G) Root                                                  ::
+echo :: (4) TechniPad Mini Root                                                   ::
 echo :: (m) Hauptmenue                                                            ::
 echo ::                                                                           ::
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -23,6 +24,7 @@ goto :menu_technisat
 IF %device%==1 (goto menu_auto)
 IF %device%==2 (goto menu_tpad8)
 IF %device%==3 (goto menu_tpad10_all)
+IF %device%==4 (goto menu_tpadmini)
 IF %device%==m (goto menu)
 goto :menu_technisat
 
@@ -174,6 +176,37 @@ IF %rootmethod%==z (goto menu_technisat)
 IF %rootmethod%==m (goto menu)
 goto :tpad10g
 
+:menu_tpadmini
+cls
+echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo ::                                                                           ::
+echo :: Rufen Sie in den Tablet Einstellungen die Systeminfo "Ueber das Tablet"   ::
+echo :: auf und lesen Sie die Versionsangaben ab:                                 ::
+echo ::                                                                           ::
+echo :: Variante 1:                                                               ::
+echo :: -----------                                                               ::
+echo :: Android Version: 4.2.2                                                    ::
+echo :: Build Version:   GE.TPad.V1.07                                            ::
+echo ::                                                                           ::
+echo :: Waehlen Sie nun die entsprechende Root Methode oder brechen Sie ab:       ::
+echo :: (1) Root Methode fuer Variante 1 starten                                  ::
+echo :: (2) Root Methode unbekannt / Automatik versuchen                          ::
+echo :: (z) TechniSat Geraetemenue                                                ::
+echo :: (m) Hauptmenue                                                            ::
+echo ::                                                                           ::
+echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo.
+SET rootmethod=
+SET /P rootmethod= Auswahl: 
+if '%rootmethod%'=='' (
+goto :menu_tpadmini
+)
+IF %rootmethod%==1 (goto tpadmini_root1)
+IF %rootmethod%==2 (goto auto_root_rk30)
+IF %rootmethod%==z (goto menu_technisat)
+IF %rootmethod%==m (goto menu)
+goto :menu_tpadmini
+
 :menu
 call "%~dp0menu.bat"
 goto :exit
@@ -192,6 +225,10 @@ goto :exit
 
 :tpad10_root3
 call "%~dp0/devices/root_GE.TPad.S10_G.V1.05.bat"
+goto :exit
+
+:tpadmini_root1
+call "%~dp0/devices/root_GE.TPad.V1.07.bat"
 goto :exit
 
 :auto_root_rk30
